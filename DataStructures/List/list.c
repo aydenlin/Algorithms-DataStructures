@@ -18,6 +18,7 @@ void list_delete(List **list, List *e) {
 		*list = e->next;
 	if (e->next != NULL)
 		e->next->prev = e->prev;
+	free(e);
 }
 
 List * list_search(List *list, int e) {
